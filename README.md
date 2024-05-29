@@ -1,6 +1,6 @@
 # Simple Blog Post Website README
 
-This Simple Blog Post Website is designed using HTML, CSS, and JavaScript to provide an engaging platform for publishing and exploring blog posts. Below is a guide to help you understand and navigate through this project effectively.
+This Simple Blog Post Website is designed using HTML, CSS, and JavaScript to provide an engaging platform for publishing and exploring blog posts. Below is a guide to help you understand and navigate through this project effectively.Feel free to give comments  
 
 ## Getting Started
 
