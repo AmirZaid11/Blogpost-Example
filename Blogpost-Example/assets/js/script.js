@@ -39,17 +39,3 @@ for (let i = 0; i < themeBtn.length; i++) {
   })
 
 }
-document.getElementById('contactNav').onclick = function(event) {
-    event.preventDefault();
-    document.getElementById('contactModal').style.display = "block";
-}
-
-document.getElementsByClassName('close')[0].onclick = function() {
-    document.getElementById('contactModal').style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == document.getElementById('contactModal')) {
-        document.getElementById('contactModal').style.display = "none";
-    }
-}
