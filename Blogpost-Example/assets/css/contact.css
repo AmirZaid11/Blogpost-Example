@@ -41,7 +41,7 @@ body {
     display: inline-flex; /* Changed to inline-flex to ensure content fits */
     align-items: center; /* Center align icon vertically */
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     transform-style: preserve-3d;
