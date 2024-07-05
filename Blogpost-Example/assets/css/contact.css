@@ -35,6 +35,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+     length: 50px;
+    height: 50px;
 }
 
 .social-link {
