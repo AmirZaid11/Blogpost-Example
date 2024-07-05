@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,87 +9,61 @@ body {
 }
 
 .container {
-    position: relative;
-    width: 600px;
-    padding: 20px;
+    text-align: center;
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+h1 {
+    font-size: 2em;
 }
 
-.close-btn a {
-    text-decoration: none;
-    color: #aaa;
-}
-
-.social-links {
+.contact-block {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
 }
 
-.social-link {
-    display: inline-flex; /* Changed to inline-flex to ensure content fits */
-    align-items: center; /* Center align icon vertically */
+.social-icon {
+    display: inline-block;
     margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    transform-style: preserve-3d;
-    overflow: hidden; /* Ensure content does not overflow */
+    width: 60px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    background-color: #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
-.social-link i {
-    font-size: 24px; /* Adjust the size as needed */
+.social-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.social-icon.telegram { background-color: red; }
+.social-icon.linkedin { background-color: blue; }
+.social-icon.gmail { background-color: orange; }
+.social-icon.whatsapp { background-color: yellow; }
+.social-icon.github { background-color: green; }
+
+.social-icon:hover {
+    background-color: #666;
+}
+
+.close-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
     color: #fff;
-    width: 24px; /* Optional: Set width for consistency */
-    height: 24px; /* Optional: Set height for consistency */
-}
-.github {
-    background-color: #6cc644;
-}
-
-.whatsapp {
-    background-color: #25d366;
-}
-
-.linkedin {
-    background-color: #0077b5;
-}
-
-.gmail {
-    background-color: #ea4335;
-}
-
-.telegram {
-    background-color: #0088cc;
-}
-
-.social-link:hover {
-    background-color: #ddd;
-    transform: translateY(-5px);
-}
-
-.closing-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.closing-button i {
-    margin-right: 5px;
+.close-button:hover {
+    background-color: #555;
 }
