@@ -85,5 +85,10 @@
       <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
     </div>
 </body>
+<script>
+if (window.location.pathname == "/about.html") {
+    window.history.replaceState(null, "", "/");
+}
+</script>
 
 </html>
