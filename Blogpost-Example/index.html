@@ -880,54 +880,70 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-  document.addEventListener('DOMContentLoaded', function() {
-  const topicButtons = document.querySelectorAll('.topic-btn');
-  const tagButtons = document.querySelectorAll('.hashtag');
-
-  // Filter by Topics
-  topicButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-      event.preventDefault();
-      const topic = button.querySelector('p').textContent.trim().toLowerCase();
-      filterPostsByTopic(topic);
-    });
-  });
-
-  // Filter by Tags
-  tagButtons.forEach(button => {
-    button.addEventListener('click', function(event) {
-      event.preventDefault();
-      const tag = button.textContent.trim().toLowerCase().substring(1); // Remove the #
-      filterPostsByTag(tag);
-    });
-  });
-
-  // Function to filter posts by topic
-  function filterPostsByTopic(topic) {
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const topicButtons = document.querySelectorAll('.topic-btn');
+    const tagButtons = document.querySelectorAll('.hashtag');
     const blogCards = document.querySelectorAll('.blog-card');
-    blogCards.forEach(card => {
-      const topics = card.querySelector('.blog-topic').textContent.trim().toLowerCase();
-      if (topics.includes(topic)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
 
-  // Function to filter posts by tag
-  function filterPostsByTag(tag) {
-    const blogCards = document.querySelectorAll('.blog-card');
-    blogCards.forEach(card => {
-      const tags = card.querySelector('.tags').textContent.trim().toLowerCase();
-      if (tags.includes(tag)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+    // Function to filter blog cards based on selected topic
+    function filterBlogCards(topic) {
+      blogCards.forEach(card => {
+        const cardTopic = card.querySelector('.blog-topic').textContent.toLowerCase();
+        if (topic === 'all' || cardTopic.includes(topic)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Function to filter blog cards based on selected tag
+    function filterBlogCardsByTag(tag) {
+      blogCards.forEach(card => {
+        const cardTags = card.querySelector('.tags').textContent.toLowerCase();
+        if (tag === 'all' || cardTags.includes(tag)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Add click event listeners to topic buttons
+    topicButtons.forEach(button => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        const selectedTopic = this.querySelector('p').textContent.toLowerCase();
+        
+        // Highlight the active button and filter blog cards by topic
+        topicButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        filterBlogCards(selectedTopic);
+      });
     });
-  }
-});
+
+    // Add click event listeners to tag buttons
+    tagButtons.forEach(button => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        const selectedTag = button.textContent.toLowerCase().substring(1); // Remove the #
+        
+        // Highlight the active tag button and filter blog cards by tag
+        tagButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        filterBlogCardsByTag(selectedTag);
+      });
+    });
+
+    // Initially show all blog cards on page load
+    filterBlogCards('all');
+    filterBlogCardsByTag('all');
+  });
+</script>
+
 
 <script>
 if (window.location.pathname == "/index.html") {
