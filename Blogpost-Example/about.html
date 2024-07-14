@@ -84,36 +84,35 @@
         }
 
         .gallery-container img {
-            width: 30%;
+            width: 10%;
             height: auto;
-            max-width: 100px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid rgba(255, 255, 255, 0.684);
             transition: all ease-in-out 0.5s;
+            cursor: pointer;
         }
 
-        .gallery-container img:hover {
+        .gallery-container img.expanded {
             width: 45%;
         }
 
         @media (max-width: 768px) {
             .gallery-container img {
-                width: 45%;
-                max-width: none;
+                width: 20%;
             }
 
-            .gallery-container img:hover {
+            .gallery-container img.expanded {
                 width: 60%;
             }
         }
 
         @media (max-width: 480px) {
             .gallery-container img {
-                width: 100%;
+                width: 30%;
             }
 
-            .gallery-container img:hover {
+            .gallery-container img.expanded {
                 width: 100%;
             }
         }
@@ -136,16 +135,27 @@
             <img src="assets/images/dbms.jpg" />
             <img src="assets/images/coder.jpg" />
             <img src="assets/images/dev.jpg" />
-            <img src="assets/images/big data.jpg" />
+            <img src="assets/images/bigdata.jpg" />
             <img src="assets/images/cyber.jpg" />
         </div>
         <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
     </div>
+    <script>
+        if (window.location.pathname == "/about.html") {
+            window.history.replaceState(null, "", "/");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const images = document.querySelectorAll('.gallery-container img');
+
+            images.forEach(img => {
+                img.addEventListener('click', function () {
+                    images.forEach(image => image.classList.remove('expanded'));
+                    this.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
 </body>
-<script>
-    if (window.location.pathname == "/about.html") {
-        window.history.replaceState(null, "", "/");
-    }
-</script>
 
 </html>
