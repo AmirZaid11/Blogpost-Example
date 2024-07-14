@@ -116,6 +116,7 @@
                 width: 100%;
             }
         }
+
         footer {
             background: rgba(0, 0, 0, 0.7);
             color: white;
@@ -149,6 +150,7 @@
         </div>
         <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
     </div>
+
     <script>
         if (window.location.pathname == "/about.html") {
             window.history.replaceState(null, "", "/");
@@ -163,8 +165,9 @@
                     this.classList.toggle('expanded');
                 });
             });
-        });
-        const footer = document.createElement('footer');
+
+            // Create and append footer
+            const footer = document.createElement('footer');
             footer.innerHTML = `
                 <p>&copy; 2024 Ernest Eddy. All rights reserved.</p>
                 <p>Follow me on <a href="https://twitter.com/ernesteddy" target="_blank">Twitter</a>, <a href="https://github.com/ernesteddy" target="_blank">GitHub</a>, and <a href="https://linkedin.com/in/ernesteddy" target="_blank">LinkedIn</a>.</p>
