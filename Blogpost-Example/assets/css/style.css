@@ -337,9 +337,19 @@ header .btn-group {
 
 .hero {
   background: var(--background-primary);
-  padding-top:    2rem;
+  padding-top: 2rem;
   padding-bottom: var(--py);
   text-align: center;
+  position: relative; /* Added position relative for image positioning */
+}
+
+.hero img {
+  max-width: 100%; /* Ensures the image width doesn't exceed its container */
+  height: auto; /* Allows the image to scale proportionally */
+  display: block; /* Ensures the image behaves like a block element */
+  margin: 0 auto; /* Centers the image horizontally */
+  position: relative; /* Ensures positioning within the hero section */
+  z-index: 1; /* Ensures image is above other elements */
 }
 
 .hero .h1 {
@@ -358,17 +368,25 @@ header .btn-group {
 }
 
 .hero .btn-group {
-  display:         flex;
+  display: flex;
   justify-content: center;
-  flex-wrap:       wrap;
+  flex-wrap: wrap;
   gap: 15px;
   text-align: center;
 }
 
-.hero .right { display: none; }
+.hero .right {
+  display: none;
+}
 
-
-
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  .hero img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 
 /*-----------------------------------*\ 
