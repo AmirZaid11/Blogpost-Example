@@ -13,11 +13,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
             background: rgba(0, 0, 0, 0.5);
             color: white;
@@ -39,6 +36,7 @@
             box-sizing: border-box;
             max-width: 90%;
             width: 100%;
+            margin: auto;
         }
 
         .title {
@@ -123,8 +121,17 @@
             padding: 20px;
             text-align: center;
             width: 100%;
-            position: fixed;
-            bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .page-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content-wrapper {
+            flex: 1;
         }
     </style>
 </head>
@@ -135,20 +142,25 @@
         Your browser does not support HTML5 video.
     </video>
 
-    <div class="content">
-        <h1 class="title">About Me</h1>
-        <div class="about">
-            <p>Hi, I'm Ernest Eddy. I'm a passionate web developer specializing in Database management and Core Web Vitals. My work focuses on creating efficient, accessible, and high-performing web solutions.</p>
-            <p>I enjoy solving complex problems and continuously learning about new technologies to stay ahead in the industry. When I'm not coding, you can find me exploring the latest trends in web development and sharing my knowledge through blog posts and tutorials.</p>
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <div class="content">
+                <h1 class="title">About Me</h1>
+                <div class="about">
+                    <p>Hi, I'm Ernest Eddy. I'm a passionate web developer specializing in Database management and Core Web Vitals. My work focuses on creating efficient, accessible, and high-performing web solutions.</p>
+                    <p>I enjoy solving complex problems and continuously learning about new technologies to stay ahead in the industry. When I'm not coding, you can find me exploring the latest trends in web development and sharing my knowledge through blog posts and tutorials.</p>
+                </div>
+                <div class="gallery-container">
+                    <img src="assets/images/dbms.jpg" />
+                    <img src="assets/images/coder.jpg" />
+                    <img src="assets/images/dev.jpg" />
+                    <img src="assets/images/bigdata.jpg" />
+                    <img src="assets/images/cyber.jpg" />
+                </div>
+                <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
+            </div>
         </div>
-        <div class="gallery-container">
-            <img src="assets/images/dbms.jpg" />
-            <img src="assets/images/coder.jpg" />
-            <img src="assets/images/dev.jpg" />
-            <img src="assets/images/bigdata.jpg" />
-            <img src="assets/images/cyber.jpg" />
-        </div>
-        <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
+        <footer></footer>
     </div>
 
     <script>
@@ -166,13 +178,12 @@
                 });
             });
 
-            // Create and append footer
-            const footer = document.createElement('footer');
+            // Create and append footer content
+            const footer = document.querySelector('footer');
             footer.innerHTML = `
                 <p>&copy; 2024 Ernest Eddy. All rights reserved.</p>
                 <p>Follow me on <a href="https://twitter.com/ernesteddy" target="_blank">Twitter</a>, <a href="https://github.com/ernesteddy" target="_blank">GitHub</a>, and <a href="https://linkedin.com/in/ernesteddy" target="_blank">LinkedIn</a>.</p>
             `;
-            document.body.appendChild(footer);
         });
     </script>
 </body>
