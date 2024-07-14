@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Me</title>
-     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
     <style>
         body, html {
             margin: 0;
@@ -68,6 +69,28 @@
             font-size: 1rem;
             border-radius: 5px;
         }
+
+        .gallery-container {
+            margin: 50px 0 0 0;
+            width: 70%;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery-container img {
+            width: 10%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.684);
+            transition: all ease-in-out 0.5s;
+        }
+
+        .gallery-container img:hover {
+            width: 25%;
+        }
     </style>
 </head>
 
@@ -83,13 +106,20 @@
             <p>Hi, I'm Ernest Eddy. I'm a passionate web developer specializing in Database management and Core Web Vitals. My work focuses on creating efficient, accessible, and high-performing web solutions.</p>
             <p>I enjoy solving complex problems and continuously learning about new technologies to stay ahead in the industry. When I'm not coding, you can find me exploring the latest trends in web development and sharing my knowledge through blog posts and tutorials.</p>
         </div>
-      <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
+        <div class="gallery-container">
+            <img src="assets/images/1.png" />
+            <img src="assets/images/2.png" />
+            <img src="assets/images/3.png" />
+            <img src="assets/images/4.png" />
+            <img src="assets/images/5.png" />
+        </div>
+        <button class="close-btn" onclick="window.location.href='index.html'">Close</button>
     </div>
 </body>
 <script>
-if (window.location.pathname == "/about.html") {
-    window.history.replaceState(null, "", "/");
-}
+    if (window.location.pathname == "/about.html") {
+        window.history.replaceState(null, "", "/");
+    }
 </script>
 
 </html>
